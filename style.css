@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+body {
+
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+
+/* Fundo com corações */
+
+.hearts::before,
+.hearts::after {
+
+    content: "❤️ 💕 💖 💗 💘";
+    position: fixed;
+    width: 100%;
+    font-size: 35px;
+    opacity: 0.25;
+    animation: subir 12s linear infinite;
+    z-index: 0;
+}
+
+
+.hearts::after {
+
+    animation-duration: 18s;
+    top: 50%;
+}
+
+
+@keyframes subir {
+
+    from {
+        transform: translateY(100vh);
+    }
+
+    to {
+        transform: translateY(-120vh);
+    }
+
+}
+
+
+
+.container {
+
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+
+}
+
+
+
+.card {
+
+    background: rgba(255,255,255,0.95);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.2);
+
+    animation: aparecer .7s ease;
+
+}
+
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity:0;
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+.foto {
+
+    width: 180px;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #ff4f81;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.emoji {
+
+    font-size:45px;
+    margin:10px;
+
+}
+
+
+
+h1 {
+
+    color:#ff3366;
+    margin-bottom:15px;
+
+}
+
+
+
+.texto {
+
+    color:#555;
+    line-height:1.5;
+    margin-bottom:25px;
+
+}
+
+
+
+.botoes {
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+
+}
+
+
+
+button {
+
+    border:none;
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.sim {
+
+    background:#ff3366;
+    color:white;
+
+}
+
+
+
+.sim:hover {
+
+    transform:scale(1.1);
+
+}
+
+
+
+.nao {
+
+    background:#ddd;
+    color:#555;
+
+    position:absolute;
+
+}
+
+
+
+.envelope {
+
+    font-size:90px;
+
+    cursor:pointer;
+
+    animation:pulsar 1.5s infinite;
+
+}
+
+
+
+.envelope span {
+
+    display:block;
+
+    font-size:18px;
+
+    color:#777;
+
+}
+
+
+
+@keyframes pulsar {
+
+    50% {
+
+        transform:scale(1.1);
+
+    }
+
+}
+
+
+
+.carta {
+
+    margin-top:20px;
+
+    animation: abrir .8s ease;
+
+}
+
+
+
+@keyframes abrir {
+
+    from {
+
+        opacity:0;
+        transform:rotateX(90deg);
+
+    }
+
+    to {
+
+        opacity:1;
+        transform:rotateX(0);
+
+    }
+
+}
+
+
+
+#textoCarta {
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin:20px 0;
+
+}
+
+
+
+.formulario {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+input {
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+}
+
+
+
+.formulario button {
+
+    background:#ff3366;
+
+    color:white;
+
+}
+
+
+
+.escondido {
+
+    display:none;
+
+}
+
+
+
+.final {
+
+    font-size:22px;
+
+    margin-top:20px;
+
+}
+
+
+
+/* Responsividade */
+
+@media(max-width:600px){
+
+
+    .container {
+
+        padding:15px;
+
+    }
+
+
+    .card {
+
+        padding:20px;
+
+    }
+
+
+    .foto {
+
+        width:140px;
+        height:140px;
+
+    }
+
+
+    h1 {
+
+        font-size:24px;
+
+    }
+
+
+    .botoes {
+
+        gap:10px;
+
+    }
+
+
+    button {
+
+        padding:12px 18px;
+
+        font-size:16px;
+
+    }
+
+}
